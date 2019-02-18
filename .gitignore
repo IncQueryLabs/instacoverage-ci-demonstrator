@@ -1,0 +1,10 @@
+builds/
+
+# Project settings specific to the local machine
+*.aliases
+*.lvlps
+*.reg
+
+
+#report files
+report.xml
