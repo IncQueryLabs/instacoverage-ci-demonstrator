@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<TEST_SUITE ICovVersion="2.1.1.1" id="Calculator.instacov">
+
+  <TEST_CASES>
+    <TEST_CASE id="2+3">
+      <COMMENT></COMMENT>
+      <REQUIREMENT>2+3=5</REQUIREMENT>
+    </TEST_CASE>
+    <TEST_CASE id="2+(-3)">
+      <COMMENT></COMMENT>
+      <REQUIREMENT>2+(-3)=(-1)</REQUIREMENT>
+    </TEST_CASE>
+    <TEST_CASE id="5-2">
+      <COMMENT></COMMENT>
+      <REQUIREMENT>5-2=3</REQUIREMENT>
+    </TEST_CASE>
+    <TEST_CASE id="2-5">
+      <COMMENT></COMMENT>
+      <REQUIREMENT>2-5=(-3)</REQUIREMENT>
+    </TEST_CASE>
+    <TEST_CASE id="5*2">
+      <COMMENT></COMMENT>
+      <REQUIREMENT>5*2=10</REQUIREMENT>
+    </TEST_CASE>
+    <TEST_CASE id="5*(-2)">
+      <COMMENT></COMMENT>
+      <REQUIREMENT>5*(-2)=-(10)</REQUIREMENT>
+    </TEST_CASE>
+    <TEST_CASE id="3*0">
+      <COMMENT></COMMENT>
+      <REQUIREMENT>3*0=0</REQUIREMENT>
+    </TEST_CASE>
+  </TEST_CASES>
+
+  <HARNESS_PATH>Calculator-test_harness.vi</HARNESS_PATH>
+
+  <VI_UNDER_TEST_PATH>..\Calculator.vi</VI_UNDER_TEST_PATH>
+
+</TEST_SUITE>
