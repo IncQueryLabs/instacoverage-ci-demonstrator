@@ -30,6 +30,14 @@
       <COMMENT></COMMENT>
       <REQUIREMENT>3*0=0</REQUIREMENT>
     </TEST_CASE>
+    <TEST_CASE id="6/3">
+      <COMMENT></COMMENT>
+      <REQUIREMENT>6/3=2</REQUIREMENT>
+    </TEST_CASE>
+    <TEST_CASE id="5/0">
+      <COMMENT></COMMENT>
+      <REQUIREMENT>Divide by zero must return an error!</REQUIREMENT>
+    </TEST_CASE>
   </TEST_CASES>
 
   <HARNESS_PATH>Calculator-test_harness.vi</HARNESS_PATH>
