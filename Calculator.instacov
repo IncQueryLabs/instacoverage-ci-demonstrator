@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<TEST_SUITE ICovVersion="2.2.0.1" id="Calculator.instacov">
+
+  <TEST_CASES>
+    <TEST_CASE id="add">
+      <COMMENT>Add 6 and 4: result will be 10</COMMENT>
+      <REQUIREMENT>Test requirement</REQUIREMENT>
+    </TEST_CASE>
+    <TEST_CASE id="subtract">
+      <COMMENT>Subtract 4 from 6: result will be 2</COMMENT>
+      <REQUIREMENT>Test requirement</REQUIREMENT>
+    </TEST_CASE>
+    <TEST_CASE id="multiply">
+      <COMMENT>Multiply 4 with 6: the result will be 24s</COMMENT>
+      <REQUIREMENT></REQUIREMENT>
+    </TEST_CASE>
+    <TEST_CASE id="error">
+      <COMMENT></COMMENT>
+      <REQUIREMENT></REQUIREMENT>
+    </TEST_CASE>
+  </TEST_CASES>
+
+  <HARNESS_PATH>Calculator-test_harness.vi</HARNESS_PATH>
+
+  <VI_UNDER_TEST_PATH>Calculator.vi</VI_UNDER_TEST_PATH>
+
+</TEST_SUITE>
