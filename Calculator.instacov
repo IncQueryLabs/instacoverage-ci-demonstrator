@@ -4,11 +4,11 @@
   <TEST_CASES>
     <TEST_CASE id="add">
       <COMMENT>Add 6 and 4: result will be 10</COMMENT>
-      <REQUIREMENT>Test requirement</REQUIREMENT>
+      <REQUIREMENT></REQUIREMENT>
     </TEST_CASE>
     <TEST_CASE id="subtract">
-      <COMMENT>Subtract 4 from 6: result will be 2</COMMENT>
-      <REQUIREMENT>Test requirement</REQUIREMENT>
+      <COMMENT>Subtract 4 from 6: result will be 2s</COMMENT>
+      <REQUIREMENT></REQUIREMENT>
     </TEST_CASE>
     <TEST_CASE id="multiply">
       <COMMENT>Multiply 4 with 6: the result will be 24s</COMMENT>
@@ -16,6 +16,10 @@
     </TEST_CASE>
     <TEST_CASE id="error">
       <COMMENT></COMMENT>
+      <REQUIREMENT></REQUIREMENT>
+    </TEST_CASE>
+    <TEST_CASE id="divide">
+      <COMMENT>Divide 6 with 4: the result will be 1.5</COMMENT>
       <REQUIREMENT></REQUIREMENT>
     </TEST_CASE>
   </TEST_CASES>
