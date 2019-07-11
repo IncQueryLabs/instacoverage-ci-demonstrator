@@ -20,8 +20,8 @@ pipeline {
 			steps {
 				script {
 					def reportFileName = bat "echo unittest_report_${env.BRANCH_NAME.replace('/', '_')}_${env.BUILD_ID}.html"
-					echo ${reportFileName}
-					echo %reportFileName%
+					bat 'echo ${reportFileName}'
+					bat 'echo %reportFileName%'
 					bat 'copy "%WORKSPACE%\\report\\report.html" "%WORKSPACE%\\report\\${reportFileName}"'
 					bat 'copy "%WORKSPACE%\\report\\report.html" "%WORKSPACE%\\report\\%reportFileName%"'
 				}
