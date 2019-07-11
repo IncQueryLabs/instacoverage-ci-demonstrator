@@ -5,14 +5,14 @@ pipeline {
 	}
 	
 	parameters {
-		string(name: "LV2018_PATH", defaultValue: "C:\\Program Files (x86)\\National Instruments\\LabVIEW 2018\\LabVIEW.exe", description: "")
+		string(name: "LV2018_PATH", defaultValue: "E:\\Program Files (x86)\\National Instruments\\Circuit Design Suite 14.1\\LabVIEW 2018\\LabVIEW.exe", description: "")
 	}
 	
 	stages { 
 		stage('Build') {				
 			steps { 
 				timeout(time: 5, unit: 'MINUTES') {	
-					bat 'LabVIEWCLI -LabVIEWPath "%LV2018_PATH%" -LogToConsole true -OperationName RunVI -VIPath "%WORKSPACE%\\ci-script.vi" "%WORKSPACE%\\instacoverage-ci-demo.lvproj" "%WORKSPACE%"'
+					bat 'LabVIEWCLI -LabVIEWPath "%LV2018_PATH%" -LogToConsole true -OperationName RunVI -VIPath "%WORKSPACE%\\ci-script.vi" "%WORKSPACE%\\InstaCoverage_CI_Demonstrator.lvproj" "%WORKSPACE%"'
 				}
 			}
 		}	
