@@ -4,14 +4,31 @@ pipeline {
 		label 'windows'
 	}
 	
-	stages { 
-		stage('Build') { 
-			steps { 
-				bat '"ci-script.vi"'
-			}
-		}
+	parameters {
+		string(name: "LV2018_PATH", defaultValue: "C:\\Program Files (x86)\\National Instruments\\LabVIEW 2018\\LabVIEW.exe", description: "")
 	}
-		
+	
+	stages { 
+		stage('Build') {				
+			steps { 
+				timeout(time: 5, unit: 'MINUTES') {	
+					bat 'LabVIEWCLI -LabVIEWPath "%LV2018_PATH%" -LogToConsole true -OperationName RunVI -VIPath "%WORKSPACE%\\ci-script.vi" "%WORKSPACE%\\instacoverage-ci-demo.lvproj" "%WORKSPACE%"'
+				}
+			}
+		}	
+		stage('Unit test report processing') {
+			when { 
+				expression { return params.RUN_UTF_TESTS } 
+			}
+			steps {
+				bat "copy %WORKSPACE%\\report\\report.html %WORKSPACE%\\report\\unittest_report_${env.BRANCH_NAME.replace('/', '_')}_${env.BUILD_ID}.html"
+				junit '**/report/report.xml'
+				publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'report', reportFiles: "report_${env.BRANCH_NAME.replace('/', '_')}_${env.BUILD_ID}.html", reportName: 'Unit Test Report', reportTitles: ''])
+				archiveArtifacts "report\\unittest_report_${env.BRANCH_NAME.replace('/', '_')}_${env.BUILD_ID}.html"
+			}
+		}	
+	}
+	
 	post {
         always {
 			junit '**/report.xml'
