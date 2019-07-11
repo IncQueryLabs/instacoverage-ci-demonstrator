@@ -17,9 +17,6 @@ pipeline {
 			}
 		}	
 		stage('Unit test report processing') {
-			when { 
-				expression { return params.RUN_UTF_TESTS } 
-			}
 			steps {
 				bat "copy %WORKSPACE%\\report\\report.html %WORKSPACE%\\report\\unittest_report_${env.BRANCH_NAME.replace('/', '_')}_${env.BUILD_ID}.html"
 				junit '**/report/report.xml'
