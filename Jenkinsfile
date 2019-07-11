@@ -19,7 +19,7 @@ pipeline {
 		stage('Unit test report processing') {
 			steps {
 				script {
-					def reportFileName = bat "unittest_report_${env.BRANCH_NAME.replace('/', '_')}_${env.BUILD_ID}.html"
+					def reportFileName = bat "echo unittest_report_${env.BRANCH_NAME.replace('/', '_')}_${env.BUILD_ID}.html"
 				}
 				bat 'copy "%WORKSPACE%\\report\\report.html" "%WORKSPACE%\\report\\reportFileName"'			
 				junit '**/report/report.xml'
