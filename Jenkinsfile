@@ -21,7 +21,7 @@ pipeline {
 				script {
 					def reportFileName = "unittest_report_${env.BRANCH_NAME.replace('/', '_')}_${env.BUILD_ID}.html"
 					
-					bat 'copy "%WORKSPACE%\\report\\report.html" "%WORKSPACE%\\report\\\\\\\\"' + reportFileName + '\\\\\\"'					
+					bat 'copy "%WORKSPACE%\\report\\report.html" "%WORKSPACE%\\report\\"' + reportFileName + '"'					
 					
 					bat "set reportFileName=unittest_report_${env.BRANCH_NAME.replace('/', '_')}_${env.BUILD_ID}.html"
 					bat 'echo ${reportFileName}'
