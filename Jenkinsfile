@@ -19,15 +19,8 @@ pipeline {
 		stage('Unit test report processing') {
 			steps {
 				script {
-					def reportFileName = "unittest_report_${env.BRANCH_NAME.replace('/', '_')}_${env.BUILD_ID}.html"
-					
-					bat 'copy "%WORKSPACE%\\report\\report.html" "%WORKSPACE%\\report\\"' + reportFileName + '"'					
-					
-					bat "set reportFileName=unittest_report_${env.BRANCH_NAME.replace('/', '_')}_${env.BUILD_ID}.html"
-					bat 'echo ${reportFileName}'
-					bat 'echo %reportFileName%'
-					bat 'copy "%WORKSPACE%\\report\\report.html" "%WORKSPACE%\\report\\${reportFileName}"'
-					bat 'copy "%WORKSPACE%\\report\\report.html" "%WORKSPACE%\\report\\%reportFileName%"'
+					def reportFileName = "unittest_report_${env.BRANCH_NAME.replace('/', '_')}_${env.BUILD_ID}.html"					
+					bat 'copy "%WORKSPACE%\\report\\report.html" "%WORKSPACE%\\report\\' + reportFileName + '"'	
 				}		
 				junit '**/report/report.xml'
 				publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'report', reportFiles: "report_${env.BRANCH_NAME.replace('/', '_')}_${env.BUILD_ID}.html", reportName: 'Unit Test Report', reportTitles: ''])
